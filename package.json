@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "babel src -d dist && webpack --config webpack.config.js && uglifyjs dist/main.js -o dist/main.min.js"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +15,5 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "twilio": "^4.14.1"
-  },
-  "engines": {
-    "node": ">=14 <15"
-  },
-  "devDependencies": {
-    "babel": "^6.23.0",
-    "uglify-js": "^3.17.4",
-    "webpack": "^5.88.2"
   }
 }
